@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QH Fashion Men’s Fashion</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    body {
+      background: #f8f9fa;
+    }
+
+    .nav-link.active {
+      color: #ffb703 !important;
+    }
+
+    /* =========================
+       HERO
+       ========================= */
+
+    .hero {
+      min-height: 560px;
+      background: linear-gradient(135deg, #202f78 0%, #1a285f 100%);
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      min-height: 560px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 70px 8%;
+    }
+
+    .hero-content h1 {
+      max-width: 650px;
+      line-height: 1.08;
+    }
+
+    .hero-content p {
+      max-width: 680px;
+      line-height: 1.7;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .hero .btn-primary {
+      background: #ffb703;
+      border-color: #ffb703;
+      color: #111827;
+      font-weight: 600;
+    }
+
+    .hero .btn-primary:hover {
+      background: #f4aa00;
+      border-color: #f4aa00;
+      color: #111827;
+    }
+
+    /*
+      hero.jpg is a complete banner image containing its own text.
+      We intentionally crop it to the right side so only the model/
+      background is shown here. The real text and buttons are HTML.
+    */
+    .hero-image {
+      min-height: 560px;
+      height: 100%;
+      background-image: url("images/hero.jpg");
+      background-size: 150% auto;
+      background-position: right 20%;
+      background-repeat: no-repeat;
+      position: relative;
+      isolation: isolate;
+    }
+
+    .hero-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(26, 40, 95, 0.22), rgba(26, 40, 95, 0.04) 55%, rgba(10, 18, 40, 0.18));
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-image img {
+      display: none;
+    }
+
+    /* =========================
+       PRODUCTS
+       ========================= */
+
+    .product-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      overflow: hidden;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 30px rgba(15, 23, 42, 0.12);
+    }
+
+    .product-card .card-img-top {
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .feature-card {
+      min-height: 240px;
+    }
+
+    /* =========================
+       RESPONSIVE
+       ========================= */
+
+    @media (max-width: 991.98px) {
+      .hero,
+      .hero-content,
+      .hero-image {
+        min-height: auto;
+      }
+
+      .hero-content {
+        padding: 70px 30px;
+      }
+
+      .hero-image {
+        height: 420px;
+        min-height: 420px;
+        background-size: 150% auto;
+        background-position: right 18%;
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      .hero-content {
+        padding: 55px 22px;
+      }
+
+      .hero-content h1 {
+        font-size: 2.25rem;
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+      }
+
+      .hero-image {
+        height: 330px;
+        min-height: 330px;
+        background-size: 165% auto;
+        background-position: right 15%;
+      }
+
+      .product-card .card-img-top {
+        height: 260px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">QH Fashion</a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="register.html">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="profile.html">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cart.html">My Cart</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container-fluid p-0">
+      <div class="row g-0 align-items-stretch">
+
+        <div class="col-lg-6">
+          <div class="hero-content">
+            <h1 class="display-5 fw-bold">
+              Modern style for modern men.
+            </h1>
+
+            <p class="lead mt-4">
+              Explore quality outfits, premium footwear, and accessories
+              crafted to elevate everyday fashion. Save your favorites and
+              manage your cart with ease.
+            </p>
+
+            <div class="hero-buttons">
+              <a
+                class="btn btn-primary btn-lg px-4"
+                href="register.html"
+              >
+                Start Shopping
+              </a>
+
+              <a
+                class="btn btn-outline-light btn-lg px-4"
+                href="contact.html"
+              >
+                Contact Sales
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="hero-image" aria-label="QH Fashion men's fashion"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED COLLECTIONS -->
+  <section class="container py-5">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Featured Collections</h2>
+      <p class="text-secondary">
+        Handpicked pieces from our latest men’s fashion collection.
+      </p>
+    </div>
+
+    <div class="row g-4" id="product-grid"></div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="bg-white py-5">
+    <div class="container">
+      <div class="row g-4">
+
+        <div class="col-md-4">
+          <div class="card feature-card border-0 shadow-sm p-4">
+            <div class="mb-3 text-primary display-6">&#9733;</div>
+            <h5>Premium Fabrics</h5>
+            <p class="text-muted">
+              Every outfit is selected for comfort, fit, and strong
+              day-to-day performance.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card feature-card border-0 shadow-sm p-4">
+            <div class="mb-3 text-success display-6">&#128176;</div>
+            <h5>Smart Savings</h5>
+            <p class="text-muted">
+              Create your profile and cart to maintain wish lists and
+              checkout quickly later.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card feature-card border-0 shadow-sm p-4">
+            <div class="mb-3 text-danger display-6">&#128640;</div>
+            <h5>Fast Access</h5>
+            <p class="text-muted">
+              A responsive shopping experience across desktop, tablet,
+              and mobile screens.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-white py-4">
+    <div class="container text-center small">
+      <p class="mb-1">
+        QH Fashion &copy; 2026. Designed for your men’s fashion experience.
+      </p>
+      <p class="mb-0">
+        Built with HTML5, CSS3, Bootstrap, JavaScript, and localStorage.
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const products = [
+      {
+        id: 1,
+        title: 'Tailored Linen Jacket',
+        description: 'Breathable linen jacket with a sharp silhouette.',
+        price: 129,
+        image: 'images/jacket-model.jpg'
+      },
+      {
+        id: 2,
+        title: 'Signature Knit Polo',
+        description: 'Soft knit polo shirt with premium finishing.',
+        price: 45,
+        image: 'images/polo-model.jpg'
+      },
+      {
+        id: 3,
+        title: 'Slim-fit Chinos',
+        description: 'Flexible chinos designed for a modern fit.',
+        price: 69,
+        image: 'images/chinos-model.jpg'
+      },
+      {
+        id: 4,
+        title: 'Classic Leather Loafers',
+        description: 'Durable loafers with a polished leather finish.',
+        price: 99,
+        image: 'images/loafers-model.jpg'
+      },
+      {
+        id: 5,
+        title: 'Everyday Denim Jacket',
+        description: 'A versatile jacket suitable for layered outfits.',
+        price: 89,
+        image: 'images/denim-model.jpg'
+      },
+      {
+        id: 6,
+        title: 'Modern Crew Sneakers',
+        description: 'Cushioned sneakers with a seamless style.',
+        price: 79,
+        image: 'images/sneakers-model.jpg'
+      }
+    ];
+
+    const productGrid = document.getElementById('product-grid');
+
+    function renderProducts() {
+      productGrid.innerHTML = products.map(product => {
+        return `
+          <div class="col-lg-4 col-md-6">
+            <div class="card product-card border-0 shadow-sm h-100">
+              <img
+                src="${product.image}"
+                class="card-img-top"
+                alt="${product.title}"
+              />
+
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">${product.title}</h5>
+
+                <p class="card-text text-muted">
+                  ${product.description}
+                </p>
+
+                <div class="mt-auto d-flex justify-content-between align-items-center">
+                  <span class="fw-bold text-primary">
+                    $${product.price}
+                  </span>
+
+                  <button
+                    class="btn btn-sm btn-outline-dark"
+                    onclick="addToCart(${product.id})"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function addToCart(productId) {
+      const cart = JSON.parse(
+        localStorage.getItem('QH FashionCart') || '[]'
+      );
+
+      const existing = cart.find(item => item.id === productId);
+
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        const product = products.find(p => p.id === productId);
+        cart.push({
+          ...product,
+          quantity: 1
+        });
+      }
+
+      localStorage.setItem('QH FashionCart', JSON.stringify(cart));
+      alert('Product added to cart successfully!');
+    }
+
+    function highlightNav() {
+      document.querySelectorAll('.nav-link').forEach(link => {
+        if (
+          link.href.includes(
+            window.location.pathname.split('/').pop()
+          )
+        ) {
+          link.classList.add('active');
+        }
+      });
+    }
+
+    highlightNav();
+    renderProducts();
+  </script>
+
+</body>
+</html>
